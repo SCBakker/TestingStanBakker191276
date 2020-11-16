@@ -1,0 +1,33 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=90191d64_002Df182_002D44ac_002D820e_002D9510de554550/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="EigenKleurSlaan" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A8597F8B-1734-479C-B957-A5F048973E1E::.NETCoreApp,Version=v3.1::TestChess.TestSchaakregels.EigenKleurSlaan&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A8597F8B-1734-479C-B957-A5F048973E1E::.NETCoreApp,Version=v3.1::TestChess.TestBoard.TestScholarsMated&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A8597F8B-1734-479C-B957-A5F048973E1E::.NETCoreApp,Version=v3.1::TestChess.TestSchaakregels.TestZelfSchaakZetten&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A8597F8B-1734-479C-B957-A5F048973E1E::.NETCoreApp,Version=v3.1::TestChess.TestSchaakregels.TestRokade&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c5ef5dc1_002D496e_002D4a40_002D89f9_002D8fa2a2d838ff/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestRokade" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A8597F8B-1734-479C-B957-A5F048973E1E::.NETCoreApp,Version=v3.1::TestChess.TestSchaakregels.TestRokade&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	</wpf:ResourceDictionary>

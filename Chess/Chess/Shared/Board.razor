@@ -1,0 +1,76 @@
+﻿@using Chess.Business;
+@using Chess.Models;
+
+@inject ChessService ChessService
+
+<div class="board">
+    <CascadingValue Value="this">
+        @foreach (var row in board)
+        {
+            <div class="row" name="@row.Number">
+                <div class="number"><span>@row.Number</span></div>
+                @foreach (var field in row.Fields)
+                {
+                    var position = "" + field.Letter + row.Number;
+                    <Field Position="@position" ColourOfField="@field.Colour.ToString()" Piece="@field.Piece?.Type.ToString()" ColourOfPiece="@field.Piece?.Colour.ToString()" />
+                }
+            </div>
+        }
+    </CascadingValue>
+    <div class="row letterrow">
+        <div class="doodHoekje"></div>
+        @foreach (var letter in Letters)
+        {
+            <div class="letter"><span>@letter</span></div>
+        }
+    </div>
+</div>
+<div class="feedback">
+    <h1>@Feedback</h1>
+</div>
+
+@code {
+    private List<Row> board;
+    private string Feedback { get; set; }
+    public string SelectedField { get; private set; }
+    public List<string> TargetFields { get; private set; }
+
+    public Colour PlayingNow { get; private set; }
+
+    protected override void OnInitialized()
+    {
+        ChessService.StartNewGame();
+        DrawBoard();
+    }
+
+    public void SetSelectedField(string selectedField)
+    {
+        SelectedField = selectedField;
+        if (!string.IsNullOrEmpty(selectedField))
+            TargetFields = ChessService.CanMoveTo(selectedField);
+        else
+            TargetFields = new List<string>(0);
+        StateHasChanged();
+    }
+
+    public void MovePiece(string targetField)
+    {
+        var (succes, isChecked) = ChessService.MovePiece(SelectedField, targetField);
+        if (succes)
+        {
+            DrawBoard();
+            Feedback = isChecked ? "Check" : "";
+            StateHasChanged();
+        }
+    }
+
+    private void DrawBoard()
+    {
+        board = ChessService.GetAllFields;
+        PlayingNow = ChessService.PlayingNow;
+        TargetFields = new List<string>(0);
+        SelectedField = "";
+    }
+
+    private string Letters => "ABCDEFGH";
+}

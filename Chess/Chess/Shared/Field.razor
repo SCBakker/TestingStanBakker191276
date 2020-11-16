@@ -1,0 +1,36 @@
+﻿<div class="field Colour_@ColourOfField @(Board.SelectedField==Position?"Selected":"") @(Board.TargetFields.Contains(Position)?"Target":"")" id="@Position" @onclick="SelectPiece">
+    @if (Piece != null)
+    {
+        var imageLocation = $"./{ColourOfPiece}{Piece}.svg";
+        <img src="@imageLocation" />
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string Position { get; set; }
+    [Parameter]
+    public string ColourOfField { get; set; }
+    [Parameter]
+    public string ColourOfPiece { get; set; }
+    [Parameter]
+    public string Piece { get; set; }
+
+    [CascadingParameter] Board Board { get; set; }
+
+    private void SelectPiece()
+    {
+        if (Board.TargetFields.Contains(Position))
+        {
+            Board.MovePiece(Position);
+        }
+        else if (Piece != null && ColourOfPiece == Board.PlayingNow.ToString())
+        {
+            Board.SetSelectedField(Position);
+        }
+        else
+        {// deselect
+            Board.SetSelectedField("");
+        }
+    }
+}
